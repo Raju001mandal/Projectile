@@ -1,0 +1,58 @@
+
+set terminal wxt background 'black'
+unset key
+unset tics
+unset grid
+unset border
+
+unset colorbox
+set xrange [0:400]
+set yrange [0:200]
+
+
+
+do for [n=0:60] {
+     
+     set multiplot layout 1,1
+     plot 'projectile.dat' using 1:2 every ::0::n w p pt 7 ps 2 lc rgb "red"   
+     plot 'projectile.dat' using 3:4 every ::0::n w p pt 7 ps 2 lc rgb "green"
+     plot 'projectile.dat' using 5:6 every ::0::n w p pt 7 ps 2 lc rgb "blue"
+     pause 0.5
+      
+     if (n==4){
+       set arrow from 0,0 to 18,29.4 filled back lc rgb "red"
+       set arrow from 0,0 to 25.45,23.69 filled back lc rgb "green"
+       set arrow from 0,0 to 31.17,16.23  filled back lc rgb "blue" 
+       set label 'all three balls thrown with the same speed 60 m/s at different angles' at 70,180 textcolor "#F08080" font ",14"
+      }
+      
+     if (n==28){
+       set label 'max height=137.71 m' at 144.9,150 textcolor "#FF0000" font ",15"
+      }  
+      
+     if (n==23){
+       set label 'max height=91.81 m' at 145,105 textcolor "#7CFC00" font ",15"
+      }  
+      
+     if (n==23){
+       set label 'max height=45.89 m' at 145,55 textcolor "#0000FF" font ",15"
+      }    
+     
+      
+     if (n==8){
+       set label 'angle 60 deg ' at 15,100 textcolor "#FF0000" font ",15"
+       set label 'angle 45 deg' at 65,85 textcolor "#7CFC00"  font ",15"
+       set label 'angle 30 deg' at 40,12 textcolor "#0000FF"  font ",15"
+       
+      }
+      
+       
+     if (n==55){
+       set label 'Range=318 m' at 280,160 textcolor "#FF0000" font ",15"
+       set label 'Range=367 m' at 280,140 textcolor "#7CFC00" font ",15"
+       set label 'Range=318 m' at 280,120 textcolor "#0000FF" font ",15"
+       
+      }
+     unset multiplot
+}
+

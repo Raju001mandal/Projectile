@@ -5,7 +5,7 @@ integer::i
 real::v,theta,vx,vy,vx0,vy0,x0,y0,t,theta1,vx1,vy1,x1,y1,theta2,vx2,vy2,x2,y2
 real,parameter::pi=acos(-1.0)
 real,dimension(1:1000)::x,y
-print*,"give v and theta and theta1"
+print*,"give v,theta,theta1 and theta2"
 read*,v,theta,theta1,theta2
 
 x0=0
